@@ -26,6 +26,7 @@ class ModuleOptions extends AbstractOptions
         'vkontakte',
         'yandex',
         'instagram',
+        'qq',
     );
 
     /**
@@ -213,6 +214,21 @@ class ModuleOptions extends AbstractOptions
      */
     protected $vkontakteSecret;
 
+    /**
+     * @var boolean
+     */
+    protected $qqEnabled = false;
+    
+    /**
+     * @var string
+     */
+    protected $qqAppId;
+    
+    /**
+     * @var string
+     */
+    protected $qqSecret;
+    
     /**
      * @var boolean
      */
@@ -1197,6 +1213,55 @@ class ModuleOptions extends AbstractOptions
     {
         return $this->vkontakteSecret;
     }
+    
+    /**
+     * @param string $qqAppId
+     */
+    public function setQqAppId($qqAppId)
+    {
+        $this->qqAppId = (string) $qqAppId;
+    }
+    
+    /**
+     * @return string
+     */
+    public function getQqAppId()
+    {
+        return $this->qqAppId;
+    }
+    
+    /**
+     * @param boolean $qqEnabled
+     */
+    public function setQqEnabled($qqEnabled)
+    {
+        $this->qqEnabled = (bool) $qqEnabled;
+    }
+    
+    /**
+     * @return boolean
+     */
+    public function getQqEnabled()
+    {
+        return $this->qqEnabled;
+    }
+    
+    /**
+     * @param string $qqSecret
+     */
+    public function setQqSecret($qqSecret)
+    {
+        $this->qqSecret = (string) $qqSecret;
+    }
+    
+    /**
+     * @return string
+     */
+    public function getQqSecret()
+    {
+        return $this->qqSecret;
+    }
+    
 
     /**
      * @param string $yandexAppId
