@@ -80,6 +80,7 @@ class HybridAuth extends AbstractAdapter implements ServiceManagerAwareInterface
             $hybridAuth = $this->getHybridAuth();
             $adapter = $hybridAuth->authenticate($provider);
             $userProfile = $adapter->getUserProfile();
+            $userProfile->email = $provider . ':' . $userProfile->email;
         } catch (\Exception $ex) {
             $authEvent->setCode(Result::FAILURE)
               ->setMessages(array('Invalid provider'));
