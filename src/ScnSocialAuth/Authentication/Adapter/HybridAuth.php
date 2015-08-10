@@ -513,6 +513,16 @@ class HybridAuth extends AbstractAdapter implements ServiceManagerAwareInterface
         return $localUser;
     }
 
+    protected function sinaToLocalUser($userProfile)
+    {
+        $localUser = $this->instantiateLocalUser();
+        $localUser->setDisplayName($userProfile->displayName)
+        ->setPassword(__FUNCTION__);
+        $result = $this->insert($localUser, 'sina', $userProfile);
+    
+        return $localUser;
+    }
+
     protected function qqToLocalUser($userProfile)
     {
         $localUser = $this->instantiateLocalUser();

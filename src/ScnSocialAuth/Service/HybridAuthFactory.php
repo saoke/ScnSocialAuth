@@ -153,6 +153,17 @@ class HybridAuthFactory implements FactoryInterface
                             'path' => realpath(__DIR__ . '/../HybridAuth/Provider/Vkontakte.php'),
                         ),
                     ),
+                    'Sina' => array(
+                        'enabled' => $options->getSinaEnabled(),
+                        'keys' => array(
+                            'id' => $options->getSinaAppId(),
+                            'secret' => $options->getSinaSecret(),
+                        ),
+                        'wrapper' => array(
+                            'class' => 'Hybrid_Providers_Sina',
+                            'path' => realpath(__DIR__ . '/../HybridAuth/Provider/Sina.php'),
+                        ),
+                    ),
                     'Qq' => array(
                         'enabled' => $options->getQqEnabled(),
                         'keys' => array(

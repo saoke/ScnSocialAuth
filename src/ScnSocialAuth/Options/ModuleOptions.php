@@ -27,6 +27,7 @@ class ModuleOptions extends AbstractOptions
         'yandex',
         'instagram',
         'qq',
+        'sina',
     );
 
     /**
@@ -213,7 +214,21 @@ class ModuleOptions extends AbstractOptions
      * @var string
      */
     protected $vkontakteSecret;
-
+    
+    /**
+     * @var boolean
+     */
+    protected $sinaEnabled = false;
+    
+    /**
+     * @var string
+     */
+    protected $sinaAppId;
+    
+    /**
+     * @var string
+     */
+    protected $sinaSecret;
     /**
      * @var boolean
      */
@@ -1212,6 +1227,54 @@ class ModuleOptions extends AbstractOptions
     public function getVkontakteSecret()
     {
         return $this->vkontakteSecret;
+    }
+    
+    /**
+     * @param string $sinaAppId
+     */
+    public function setSinaAppId($sinaAppId)
+    {
+        $this->sinaAppId = (string) $sinaAppId;
+    }
+    
+    /**
+     * @return string
+     */
+    public function getSinaAppId()
+    {
+        return $this->sinaAppId;
+    }
+    
+    /**
+     * @param boolean $sinaEnabled
+     */
+    public function setSinaEnabled($sinaEnabled)
+    {
+        $this->sinaEnabled = (bool) $sinaEnabled;
+    }
+    
+    /**
+     * @return boolean
+     */
+    public function getSinaEnabled()
+    {
+        return $this->sinaEnabled;
+    }
+    
+    /**
+     * @param string $sinaSecret
+     */
+    public function setSinaSecret($sinaSecret)
+    {
+        $this->sinaSecret = (string) $sinaSecret;
+    }
+    
+    /**
+     * @return string
+     */
+    public function getSinaSecret()
+    {
+        return $this->sinaSecret;
     }
     
     /**
