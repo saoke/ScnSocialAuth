@@ -37,14 +37,14 @@ class Hybrid_Providers_Sina extends Hybrid_Provider_Model
 
 		if ( $this->token( 'access_token' ) ) {
 			$this->api = new SaeTClientV2 ( 
-				$this->config['keys']['key'], $this->config['keys']['secret'], $this->token('access_token')
+				$this->config['keys']['id'], $this->config['keys']['secret'], $this->token('access_token')
 			);
 			
 			$user = $this->api->get_uid();
 			$this->user_id = $user['uid'];
 		} else {
 			$this->api = new SaeTOAuthV2 ( 
-				$this->config['keys']['key'], $this->config['keys']['secret'] 
+				$this->config['keys']['id'], $this->config['keys']['secret'] 
 			);
 		}
 	}
